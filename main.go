@@ -8,7 +8,11 @@ import (
 )
 
 func main() {
-	videoURL := "https://www.youtube.com/watch?v=kzcgel0ddHI"
+	// Получаем URL видео из аргументов командной строки
+	videoURL := "https://www.youtube.com/watch?v=kzcgel0ddHI" // URL по умолчанию
+	if len(os.Args) > 1 {
+		videoURL = os.Args[1]
+	}
 	outputFile := "output_video.mp4"
 
 	// Проверяем, установлен ли yt-dlp
